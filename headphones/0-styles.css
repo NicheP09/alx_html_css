@@ -1,0 +1,215 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+:root {
+  --primary: #ff6565;
+  --max-width: 1200px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  padding: 2rem 1rem;
+  min-height: 100vh;
+  background-image: url('./assets/images/headphones_hero_1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+
+  padding: 8px 16px;
+  z-index: 1000;
+  transition: top 0.3s;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  position: relative;
+}
+
+.nav-links {
+  display: flex;
+
+  order: 2;
+}
+
+.nav-links-con {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s;
+  font-weight: bold;
+}
+
+.nav-links li a:hover,
+.nav-links li a:focus {
+  color: var(--primary);
+  opacity: 0.9;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  left: 0;
+  z-index: 1001;
+}
+
+.bar {
+  height: 3px;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 2px;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.bar.mid-bar {
+  width: 70%;
+}
+
+.hamburger:hover .bar:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.hamburger:hover .mid-bar {
+  opacity: 0;
+}
+
+.hamburger:hover .bar:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+.hamburger.active .bar:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.hamburger.active .mid-bar {
+  opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+main {
+  margin-top: auto;
+  text-align: center;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 4rem;
+}
+.section2 {
+  margin: auto;
+  max-width: 700px;
+}
+
+main h1 {
+  font-size: 2rem;
+}
+
+.main-para {
+  text-align: center;
+}
+.btn-call {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0;
+}
+.btn {
+  padding: 0.8rem 1.5rem;
+  background-color: var(--primary);
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: opacity 0.3s;
+  border-radius: 30px;
+  font-weight: bold;
+}
+
+.btn:hover,
+.btn:focus {
+  opacity: 0.9;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+@media (width < 480px) {
+  .site-header {
+    flex-direction: column;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+  .logo img {
+    height: 35px;
+  }
+
+  .nav-links {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    width: 100%;
+    line-height: 3;
+    text-align: center;
+    padding: 1rem;
+    padding-left: 2rem;
+  }
+  .nav-links-con {
+    display: initial;
+  }
+  .hamburger:hover + .nav-links {
+    display: flex;
+  }
+
+  main h1 {
+    font-size: 1.5rem;
+  }
+
+  main p {
+    font-size: 0.9rem;
+  }
+}
