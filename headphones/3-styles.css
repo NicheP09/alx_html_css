@@ -1,0 +1,288 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+:root {
+  --primary: #ff6565;
+  --max-width: 1200px;
+}
+
+body {
+}
+
+.hero {
+  background-image: url('./assets/images/headphones_hero_1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.hero-con {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+.hero-content {
+  margin-top: auto;
+  text-align: center;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 4rem;
+  max-width: 700px;
+  margin-inline: auto;
+}
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  position: relative;
+}
+
+.nav-links {
+  display: flex;
+
+  order: 2;
+}
+
+.nav-links-con {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s;
+  font-weight: bold;
+}
+
+.nav-links li a:hover,
+.nav-links li a:focus {
+  color: var(--primary);
+  opacity: 0.9;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  left: 0;
+  z-index: 1001;
+}
+
+.bar {
+  height: 3px;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 2px;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.bar.mid-bar {
+  width: 70%;
+}
+
+.hamburger:hover .bar:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.hamburger:hover .mid-bar {
+  opacity: 0;
+}
+
+.hamburger:hover .bar:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+.hamburger.active .bar:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.hamburger.active .mid-bar {
+  opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+main {
+  margin: 0 auto;
+}
+
+section {
+  padding-top: 4rem;
+  text-align: center;
+  margin: auto;
+  line-height: 1.5;
+}
+
+main h2 {
+  margin-block: 2rem;
+}
+
+.main-para {
+  text-align: center;
+  max-width: 700px;
+}
+.btn-call {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0;
+}
+.btn {
+  padding: 0.8rem 1.5rem;
+  background-color: var(--primary);
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: opacity 0.3s;
+  border-radius: 30px;
+  font-weight: bold;
+}
+
+.btn:hover,
+.btn:focus {
+  opacity: 0.9;
+}
+.what-we-do-para {
+  max-width: 650px;
+  margin: auto;
+}
+.icon-wrapper {
+  margin-block: 2rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: center;
+  align-items: center;
+  margin-inline: auto;
+  transition: all 0.3s ease-in-out;
+}
+
+.icon-container {
+  margin: 2rem;
+}
+.icon-container h3 {
+  margin-block: 0.8rem;
+}
+
+.icon-content {
+  max-width: 200px;
+  margin: auto;
+}
+
+.p2-icon {
+  font-size: 4rem;
+  color: var(--primary);
+}
+
+.icon-content p {
+  font-size: 0.8rem;
+  margin-top: 0.2rem;
+}
+
+.hero-2 {
+  background-image: url('./assets/images/headphones_hero_2.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #fff;
+}
+.hero-2-h2 {
+  padding-top: 2rem;
+}
+
+.input-con {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+input {
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: 1px solid rgba(190, 189, 189, 0.788);
+  padding: 4px;
+  outline: none;
+  width: 30%;
+}
+
+input::placeholder {
+  font-weight: bold;
+}
+
+@media (width < 480px) {
+  .site-header {
+    flex-direction: column;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+  .logo img {
+    height: 35px;
+  }
+
+  .nav-links {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    width: 100%;
+    line-height: 3;
+    text-align: center;
+    padding: 1rem;
+    padding-left: 2rem;
+  }
+  .nav-links-con {
+    display: initial;
+  }
+  .hamburger:hover + .nav-links {
+    display: flex;
+  }
+
+  main h1 {
+    font-size: 1.5rem;
+  }
+
+  main p {
+    font-size: 0.9rem;
+  }
+
+  .icon-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .icon-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
